@@ -1,11 +1,20 @@
 #!/usr/bin/python3
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     from sys import argv
-nargs = len(argv)
-if nargs == 1:
-    print("{:d} arguments.".format(nargs - 1))
-elif nargs > 1:
-    message = "argument" if (nargs == 2) else "arguments"
-    print("{:d} {:s}:".format(nargs - 1, message))
-    for i in range(1, nargs):
-        print("{:d}: {:s}".format(i, argv[i]mo.))
+    args = argv[1:]
+
+    print('{:d}'.format(len(args)), end=' ')
+    if (len(args) == 0):
+        print('arguments.')
+    elif (len(args) == 1):
+        print('argument:')
+        print('1: {:s}'.format(argv[1]))
+
+    else:
+        print('arguments:')
+
+    for i in range(0, len(args)):
+        if len(args) == 1:
+            break
+        print('{:d}: {:s}'.format(i + 1, (argv[i + 1])))
