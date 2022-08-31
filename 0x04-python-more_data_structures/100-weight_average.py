@@ -1,11 +1,15 @@
 #!/usr/bin/python3
-
 def weight_average(my_list=[]):
-    if my_list is not None:
-        weighted_numerator = 0
-        weight_sum = 0
-        for score, weight in my_list:
-            weighted_numerator += (score * weight)
-            weight_sum += weight
-        average = (weighted_numerator / weight_sum)
-        return average
+    """ returns the weighted average"""
+    """ of all integers tuple (<score>, <weight>)"""
+    if not my_list:
+        return 0
+
+    num = 0
+    den = 0
+
+    for tup in my_list:
+        num += tup[0] * tup[1]
+        den += tup[1]
+
+    return (num / den)
