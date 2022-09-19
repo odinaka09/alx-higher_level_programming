@@ -60,6 +60,24 @@ class Rectangle:
         Rectangle.number_of_instances -= 1  # decrease count of objects.
         print("Bye rectangle...")
 
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """Returns the bigger rectangle with the biggest area.
+        Args:
+            rect_1 (Rectangle): first instance of class ``Rectangle``
+            rect_2 (Rectangle): second instance of class ``Rectangle``
+        Raises:
+            TypeError: If any parameter is not an instance of ``Rectangle``
+        """
+        if type(rect_1) != Rectangle:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if type(rect_2) != Rectangle:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        else:
+            return rect_2
+
     @property
     def width(self):
         """``width`` property.
